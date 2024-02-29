@@ -69,5 +69,16 @@ const rescue = {
             size: 12,
             bio: "Honey is the sweetest girl ever. She likes smelling flowers."
         }
-    ]
-}
+    ],
+
+    dogMaker(newName, newEnergy, newSize, newBio) {
+        let dog = {
+            name: newName,
+            energy: newEnergy,
+            size: newSize,
+            bio: newBio
+        };
+        this.dogs.push(dog);
+    },
+};
+
