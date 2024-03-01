@@ -81,35 +81,26 @@ const rescue = {
         this.dogs.push(dog);
     },
 
-    dogSelector(dogEnergy, dogSize) {
-        let dogChoice = this.dogs;
-        let dogMatch = [];
-        let dogFinal = [];
-        let dogWinner = [];
+    dogSelector(dogEnergy) {
+        dogChoice = rescue.dogs;
+        dogMatch = [];
+        
+        for (let i = dogChoice[0].energy; i < dogChoice.length; i++) {
+            if (dogChoice[i].energy = dogEnergy) {
+                dogMatch.push(dogChoice[i]);
+            }
+        }
 
-        for (let i = 0; i < dogChoice.length; i++) {
-            if (dogChoice.energy === dogEnergy) {
-                dogMatch.push(dogChoice);
-            };
-        };
-
-        for (let i = 0; i < dogMatch.length; i++) {
-            if (dogMatch.size < dogSize) {
-                dogFinal.push(dogMatch);
-            };
-        };
-
-        dogFinalCount = dogFinal.length - 1;
-
-        dogIndex = Math.floor(Math.random() * dogFinalCount);
-
-        dogWinner.push(dogFinal[dogIndex]);
-
-        winName = dogWinner.name;
-
-        winBio = dogWinner.bio;
-
-        return `Congrats, you get to see ${winName} today! ${winBio}`;
+        
+        return dogMatch;
     }
 };
+
+let pickAPal = rescue.dogSelector;
+
+let newDog = rescue.dogMaker;
+
+console.log(pickAPal(9))
+
+
 
