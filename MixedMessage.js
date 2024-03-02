@@ -85,7 +85,8 @@ const rescue = {
         dogChoice = rescue.dogs;
         dogMatch = [];
         dogFinal = [];
-        
+        dogWinner = [];
+
         for (let i = dogChoice[0].energy; i < dogChoice.length; i++) {
             if (dogChoice[i].energy = dogEnergy) {
                 dogMatch.push(dogChoice[i]);
@@ -98,8 +99,19 @@ const rescue = {
             }
         });
 
-        return dogFinal;
+        dogFinalCount = dogFinal.length;
 
+        dogIndex = Math.floor(Math.random() * dogFinalCount);
+
+        dogWinner.push(dogFinal[dogIndex]);
+
+        dogWinnerStats = dogWinner[0];
+
+        winName = dogWinnerStats.name;
+
+        winBio = dogWinnerStats.bio;
+
+        return `Congrats you get to hangout with ${winName} today! ${winBio}`
     }
 };
 
@@ -107,7 +119,7 @@ let pickAPal = rescue.dogSelector;
 
 let newDog = rescue.dogMaker;
 
-console.log(pickAPal(9, 15));
+console.log(pickAPal(7, 40));
 
 
 
