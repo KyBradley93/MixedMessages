@@ -81,18 +81,25 @@ const rescue = {
         this.dogs.push(dog);
     },
 
-    dogSelector(dogEnergy) {
+    dogSelector(dogEnergy, dogSize) {
         dogChoice = rescue.dogs;
         dogMatch = [];
+        dogFinal = [];
         
         for (let i = dogChoice[0].energy; i < dogChoice.length; i++) {
             if (dogChoice[i].energy = dogEnergy) {
                 dogMatch.push(dogChoice[i]);
-            }
-        }
+            } 
+        };
 
-        
-        return dogMatch;
+        dogMatch.filter(dogMatch => {
+            if (dogMatch.size < dogSize) {
+                dogFinal.push(dogMatch);
+            }
+        });
+
+        return dogFinal;
+
     }
 };
 
@@ -100,7 +107,7 @@ let pickAPal = rescue.dogSelector;
 
 let newDog = rescue.dogMaker;
 
-console.log(pickAPal(9))
+console.log(pickAPal(9, 15));
 
 
 
